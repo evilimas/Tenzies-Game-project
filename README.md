@@ -25,6 +25,10 @@ Welcome to the Tenzies game project repository! Tenzies is a simple dice game wh
 3. Keep rolling until all dice show the same value to achieve "Tenzies."
 4. Once "Tenzies" is achieved, confetti will appear, and you can start a new game by clicking the "New Game" button.
 
+## Check It Out
+
+Visit the live [Tenzies game](https://tenzies-gameproj.netlify.app/)  to explore its features and functionality.
+
 ## Development
 
 If you want to make modifications or improvements to the game:

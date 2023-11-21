@@ -7,6 +7,9 @@ import './index.css';
 export default function App() {
   const [dice, setDice] = React.useState(allNewDice());
   const [tenzies, setTenzies] = React.useState(false);
+  //strech goals Roll Count and Time playing
+  const [rollCount, setRollCount] = React.useState(0);
+  const [startTime, setStartTime] = React.useState(null);
 
   React.useEffect(() => {
     const allHeld = dice.every((die) => die.isHeld);
@@ -36,13 +39,19 @@ export default function App() {
   function rollDice() {
     if (!tenzies) {
       setDice((oldDice) =>
-        oldDice.map((die) => {
-          return die.isHeld ? die : generateNewDie();
-        })
+        oldDice.map((die) => (die.isHeld ? die : generateNewDie()))
       );
+      setRollCount((prevCount) => prevCount + 1);
     } else {
       setTenzies(false);
       setDice(allNewDice());
+      setRollCount(0);
+      setStartTime(null);
+    }
+
+    // Record start time when "Tenzies" is achieved
+    if (!tenzies && startTime === null) {
+      setStartTime(new Date());
     }
   }
 
@@ -75,6 +84,12 @@ export default function App() {
       <button className="roll-dice" onClick={rollDice}>
         {tenzies ? 'New Game' : 'Roll'}
       </button>
+      <p>Roll Count: {rollCount}</p>
+      {tenzies && startTime && (
+        <p>
+          Time to Win: {Math.floor((new Date() - startTime) / 1000)} seconds
+        </p>
+      )}
     </main>
   );
 }

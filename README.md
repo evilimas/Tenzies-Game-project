@@ -35,6 +35,10 @@ The game now includes a roll counter that keeps track of the number of rolls mad
 
 A timer has been added to track the time it took to achieve "Tenzies" from the first click on the dice.
 
+## Check It Out
+
+Visit the live [Tenzies game](https://tenzies-gameproj.netlify.app/) to explore its features and functionality.
+
 ## Development
 
 If you want to make modifications or improvements to the game:

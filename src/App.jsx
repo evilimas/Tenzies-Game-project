@@ -84,9 +84,9 @@ export default function App() {
       <button className="roll-dice" onClick={rollDice}>
         {tenzies ? 'New Game' : 'Roll'}
       </button>
-      <p>Roll Count: {rollCount}</p>
+      <p className='roll-count'>Roll Count: {rollCount}</p>
       {tenzies && startTime && (
-        <p>
+        <p className='time-to-win'>
           Time to Win: {Math.floor((new Date() - startTime) / 1000)} seconds
         </p>
       )}
